@@ -1,0 +1,21 @@
+#Read entire html fie into $news var
+
+open FILE, "<news.asp";
+$news = do {local $/; <FILE>};
+
+#Read all headlines in $news into a @headlines array:
+@headlines = ($news =~ /<p><strong>(.+ )<\/strong><\/p>/g);
+
+foreach my $h1 (@headlines)
+{
+    print $h1, "\n";
+}
+
+#Read all the anchor name tags in $news into @names array:
+
+@names = ($news=~ /<a name =(.+)<\/a>/g);
+foreach $n (@names)
+{
+	print $name;	
+}
+

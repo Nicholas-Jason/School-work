@@ -1,0 +1,36 @@
+page 111 Exercises 1 and 2
+
+1. a) When there are more elements on the right than the farthest element to the right is ignored.
+
+   b)When there more elements on the left the program runs but unused element is brought to the attention of the user.
+
+   c) The same thing that occurs when there are more elements on the left than on the right.
+
+   d) An error message is sent and the program fails to run.
+
+2. An error message is sent saying that these elements do not exist.
+
+Page 177 Exercise 1
+1. a) $var =~ /(w+)$/
+	-It will find a word with the character of w along with whatever comes after it.
+
+   b) $code !~ /^#/
+	-Returns true if there is no match.
+   c) s/#{2,}/#/g
+	-If the current String repeats 2 times, replace it with one occurence of the string.Will read entire line.
+
+3. It forces the program to work in a certain context in order to prevent errors.
+
+4.Perl's motto is that 'There is more than one way to do things'. This motto highlights major strength and major weakness.Perl was created by Larrry Wall in 1987 as a general purpose Unix scripting language.He designed it to make the reporting process easier.To accomplish this task he designed Perl to be a dynamic or 'weakly' typed programming language. As a result of this Perl is a very flexible language. This is its main strength as it makes it easier to program. On the other hand, this flexibility has been cited as its primary weakness. This flexibility makes it difficult for other people to read the programmer's code.This problem would be especially difficult if the programmer is working within a team since if everybody is writing the code their own way than errors can be heard the spot and the final project may not be able to run.
+
+5. while ( $word = <STDIN> ) { 
+	    chomp($word);
+	    $length = length($word);
+#Use length as an array subscript, so if
+#$length is 5, increment array[5].
+	    
+	$list{$length}++;
+          }
+ foreach $item ( sort keys %list ) {
+             print "$item lives in $list{$item}\n";
+          }
