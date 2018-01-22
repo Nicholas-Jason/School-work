@@ -1,0 +1,7 @@
+1. There is no equivalent for use strict in python and has an automatic warning system therefore there is no need to call it. The source of this information is stackoverflow.
+
+4. The functional programming paradigm is when functions serve as the building blocks of a program. In this paradigm, computations are considered
+the evaluation of matematic functions as expressions.This means that they declare a relationship between two or more entities. The focus of functional
+programming is abstraction and reducing complexity making the program easier to understand.An example of functional programming in python is the existence
+of the iterator object.The iterator contains a stream of data and returns it one element at a time.It also has built-in function called next() that references
+the element of the data that succeeds the current element.This is an example of functional programming because it declares a relationship between two or more entitiesSources: Python Software Foundation and c2.com.

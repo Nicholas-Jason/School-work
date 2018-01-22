@@ -1,0 +1,33 @@
+import sys
+import re
+import urllib2
+
+#headline = re.compile('<p><strong>(+)</p></strong>')
+rss = open('output.txt','w')
+
+url=' http://www.monmouth.edu/school-of-science/news-and-events.aspx'
+response = urllib2.urlopen(url)
+link = {}
+input = response.read()
+
+headline_re = re.compile('<p><strong>(.+)</strong></p>')
+tag_re = re.compile('a name="(.+)></a')
+h = headline_re.findall(input)
+u = tag_re.findall(input)
+
+h.remove('Dean Palladino and')
+
+h.remove('Engineering College and')
+
+h.remove('Dr. Robert McCaig')
+
+print len(u)
+print len(h)
+#for line in h:
+   #print line
+    
+for x in range (len(h)):
+    link[ h[x] ] = u[x]
+for line in link:
+    rss.write(line)
+

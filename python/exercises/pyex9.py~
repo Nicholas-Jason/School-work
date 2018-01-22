@@ -1,0 +1,26 @@
+#screen-scrape the article titles and URLs from html sourse
+#http://technews.acm.org Use a dictionary newfeed to store
+#the title:URl key:value pairs Print
+
+import sys
+import re
+
+#o - Read entire file through stdin into one variable:
+input = sys.stdin.read()
+#1 - Create list of article titles:
+titles_re = re.compile('<li><a href="#[0-9]+">(.+)</a></li>')
+titles = titles_re.findall(input)
+
+#2 - Create list of article URL
+urls_re = re.compile('<a href="(.+)" target="_blank" >View Full Article</a>')
+urls = urls_re.findall(input)
+
+#3 erge titles and urls into the newsfeed dictionary
+newsfeed = {}
+
+for x in range ( len( titles ) ):
+newsfeed[ titles[ x ] ] = urls[ x ]
+ 
+#4 print contents
+for title in newsfeed.keys():
+print title, newsfeed[ title ]
